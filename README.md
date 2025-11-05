@@ -1,18 +1,35 @@
-Sistema de Detección de Vibraciones con ESP32 y Blynk IoT
+# Sistema de Detección de Vibraciones con ESP32 y Google Sheets
 
-Este repositorio contiene el código fuente del proyecto "Sistema de Detección de Vibraciones", desarrollado con un ESP32, un sensor SW-420, y la plataforma Blynk IoT.
-El sistema detecta vibraciones físicas, activa alertas visuales y sonoras, y registra los eventos en una hoja de cálculo de Google Sheets mediante un Webhook HTTP y un Google Apps Script.
+Este repositorio contiene el código fuente de un **sistema de monitoreo de vibraciones** basado en el **sensor SW-420** y una **placa ESP32**.  
+El sistema permite **detectar vibraciones físicas**, **enviar los datos a Google Sheets** mediante **HTTP requests**, y **visualizarlos en tiempo real** a través de **Blynk**.
 
-Archivos del repositorio
+---
 
-esp32_vibraciones.ino → Código principal del ESP32.
+## Contenido del repositorio
 
-google_app_script.js → Script de Google Apps Script que recibe los datos enviados desde Blynk y los guarda en la hoja de cálculo.
+- **practica6_iot.ino** → Código principal para el ESP32, encargado de la lectura del sensor y la comunicación con Blynk y Google Sheets.  
+- **google_app_script.js** → Script de **Google Apps Script** usado para recibir los datos enviados por el ESP32 y almacenarlos automáticamente en una hoja de cálculo.
 
-Funcionalidad general
+---
 
-El sensor SW-420 detecta una vibración y envía una señal digital al ESP32.
+## Tecnologías utilizadas
 
-El microcontrolador activa el LED y el buzzer si están habilitados desde la app.
+- ESP32  
+- Sensor SW-420  
+- Blynk IoT  
+- Google Apps Script  
+- Google Sheets  
 
-Los datos se envían a Blynk IoT y se registran automáticamente en Google Sheets.
+---
+
+## Funcionalidad general
+
+1. El **sensor SW-420** detecta vibraciones y envía la señal al ESP32.  
+2. El ESP32 procesa los datos y los envía a **Blynk** para su visualización.  
+3. Los valores se almacenan en **Google Sheets** mediante una solicitud **HTTP GET** al script.  
+
+---
+
+## Objetivo
+
+Desarrollar un sistema accesible y eficiente para **monitorear vibraciones físicas** y **registrar datos históricos** en la nube para su análisis posterior.
